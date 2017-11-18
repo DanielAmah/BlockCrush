@@ -24,19 +24,18 @@ public class BlockCollision : MonoBehaviour {
 	void OnCollisionEnter(Collision col){
 		obTag = col.gameObject.tag;
 		if (col.gameObject.tag == "fireObstacle"){
-			life-=1;
+			life -= 1;
 
-		}
-		if (col.gameObject.tag == "lander") {
-			points += 10;
 		}
 
 	}
 
-//	void OnCollisionEnter(Collision col){
-//		obTag = col.gameObject.tag;
-//		if (col.gameObject.tag == "lander") {
-//			points += 10;
-//		}
-//	}
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "coins") {
+			points += 10;
+			Destroy (other.gameObject);
+		}
+	}
+		
 }
