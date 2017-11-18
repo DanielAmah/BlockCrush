@@ -12,14 +12,12 @@ public class BlockCollision : MonoBehaviour {
 	public Text lives;
 	public String obTag;
 	public String scoreText;
-	public String livesLeft;
 	// Use this for initialization
 	void Start () {
 		obTag = "unknown";
 		life = 5;
 		points = 0;
 		scoreText = "Score: ";
-		livesLeft = "Lives Left: ";
 		setScoreText ();
 		setLivesLeft ();
 	}
