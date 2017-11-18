@@ -7,18 +7,21 @@ using System;
 public class BlockCollision : MonoBehaviour {
 
 	public int life;
-	public String obTag;
 	public int points;
 	public Text score;
+	public Text lives;
+	public String obTag;
 	public String scoreText;
+	public String livesLeft;
 	// Use this for initialization
 	void Start () {
 		obTag = "unknown";
 		life = 5;
 		points = 0;
 		scoreText = "Score: ";
+		livesLeft = "Lives Left: ";
 		setScoreText ();
-		// score.text = "Score: " + points.toString ();
+		setLivesLeft ();
 	}
 	
 	// Update is called once per frame
@@ -29,8 +32,10 @@ public class BlockCollision : MonoBehaviour {
 	void OnCollisionEnter(Collision col){
 		obTag = col.gameObject.tag;
 		if (col.gameObject.tag == "fireObstacle"){
-			life -= 1;
-
+			if (life > 0) {
+				life -= 1;
+			}
+			setLivesLeft ();
 		}
 
 	}
@@ -40,11 +45,33 @@ public class BlockCollision : MonoBehaviour {
 		if (other.gameObject.tag == "coins") {
 			points += 10;
 			setScoreText ();
-			// score.text = "Count: " + points.ToString ();
+			setLivesLeft ();
 			Destroy (other.gameObject);
 		}
 	}
 	void setScoreText() {
 		score.text = scoreText + points.ToString ();
+	}
+	void setLivesLeft() {
+		switch (life) {
+		case 1:
+			lives.text = "❤";
+			break;
+		case 2:
+			lives.text = "❤❤";
+			break;
+		case 3:
+			lives.text = "❤❤❤";
+			break;
+		case 4:
+			lives.text = "❤❤❤❤";
+			break;
+		case 5:
+			lives.text = "❤❤❤❤❤";
+			break;
+		default:
+			lives.text = "___";
+			break;
+		}
 	}
 }
