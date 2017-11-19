@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class BlockCollision : MonoBehaviour {
 
@@ -34,6 +35,15 @@ public class BlockCollision : MonoBehaviour {
 				life -= 1;
 			}
 			setLivesLeft ();
+
+			if (life == 0){
+				
+				SceneManager.LoadScene(2); 
+			}
+		}
+
+		if (col.gameObject.tag == "house"){
+			SceneManager.LoadScene(3);
 		}
 
 	}
@@ -46,6 +56,8 @@ public class BlockCollision : MonoBehaviour {
 			setLivesLeft ();
 			Destroy (other.gameObject);
 		}
+			
+
 	}
 	void setScoreText() {
 		score.text = scoreText + points.ToString ();

@@ -62,10 +62,13 @@
      <None Include="Assets\Medieval_House\Info.txt" />
      <None Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\README_Basic.txt" />
      <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+     <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Brick Substance\Documentation\Help.txt" />
      <None Include="Assets\SpartanKing\animations.txt" />
+     <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Brick Substance\Documentation\Eula.txt" />
      <None Include="Assets\PyroParticles\Readme.txt" />
+     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>/Users/andeladeveloper/Desktop/unity/BlockCrush/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
