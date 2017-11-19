@@ -56,6 +56,13 @@ public class BlockCollision : MonoBehaviour {
 			setLivesLeft ();
 			Destroy (other.gameObject);
 		}
+
+		if (other.gameObject.tag == "gemStone") {
+			life += 1;
+			setScoreText ();
+			setLivesLeft ();
+			Destroy (other.gameObject);
+		}
 			
 
 	}
@@ -78,6 +85,15 @@ public class BlockCollision : MonoBehaviour {
 			break;
 		case 5:
 			lives.text = "❤❤❤❤❤";
+			break;
+		case 6:
+			lives.text = "❤❤❤❤❤❤";
+			break;
+		case 7:
+			lives.text = "❤❤❤❤❤❤❤";
+			break;
+		case 8:
+			lives.text = "❤❤❤❤❤❤❤❤";
 			break;
 		default:
 			lives.text = "___";
